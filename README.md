@@ -7,7 +7,7 @@ npm install @nestjs/passport passport
 npm install @types/passport-jwt --save-dev
 npm install @types/bcrypt --save-dev
 URL base: http://localhost:3000
-
+url de la api montada con render.com: https://repuestos-tyqo.onrender.com
 =====================
 Rutas de Autenticación
 =====================
