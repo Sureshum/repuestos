@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API Tester</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    .container { max-width: 600px; margin: 0 auto; }
+    .form-group { margin-bottom: 15px; }
+    button { padding: 8px 15px; background: #007bff; color: white; border: none; cursor: pointer; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>API Tester</h1>
+    
+    <div class="form-group">
+      <h3>Login</h3>
+      <input type="text" id="email" placeholder="Email" value="user@example.com"><br>
+      <input type="password" id="password" placeholder="Password" value="User123"><br>
+      <button onclick="login()">Login</button>
+      <pre id="login-result"></pre>
+    </div>
+
+    <div class="form-group">
+      <h3>User Endpoint</h3>
+      <button onclick="getUserData()">Get User Data</button>
+      <pre id="user-result"></pre>
+    </div>
+  </div>
+
+  <script>
+    let token = '';
+
+    async function login() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      
+      try {
+        const response = await fetch('https://jwt-auth-api.up.railway.app/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+        const data = await response.json();
+        token = data.access_token;
+        document.getElementById('login-result').textContent = JSON.stringify(data, null, 2);
+      } catch (error) {
+        document.getElementById('login-result').textContent = 'Error: ' + error.message;
+      }
+    }
+
+    async function getUserData() {
+      if (!token) {
+        alert('Login first!');
+        return;
+      }
+      
+      try {
+        const response = await fetch('https://jwt-auth-api.up.railway.app/user', {
+          headers: { 'Authorization': 'Bearer ' + token }
+        });
+        const data = await response.json();
+        document.getElementById('user-result').textContent = JSON.stringify(data, null, 2);
+      } catch (error) {
+        document.getElementById('user-result').textContent = 'Error: ' + error.message;
+      }
+    }
+  </script>
+</body>
+</html>

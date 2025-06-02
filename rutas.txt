@@ -1,0 +1,18 @@
+Rutas de la API de Repuestos Automotrices:
+
+POST /repuestos: Crear un nuevo repuesto.
+Ejemplo de cuerpo de solicitud:
+{
+  "nombre": "Filtro de aire",
+  "marca": "Bosch",
+  "modelo": "ABC123",
+  "anio": 2020,
+  "precio": 25.99,
+  "foto": "http://ejemplo.com/foto.jpg"
+}
+
+GET /repuestos: Obtener todos los repuestos registrados.
+
+GET /repuestos/:id: Obtener un repuesto específico por su ID (índice en el arreglo).
+
+DELETE /repuestos/:id: Eliminar un repuesto por su ID (índice en el arreglo).
