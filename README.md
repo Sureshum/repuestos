@@ -53,7 +53,7 @@ Respuesta Exitosa (200 OK): Devuelve un arreglo de objetos repuesto.
     "modelo": "Spark",
     "año": 2018,
     "precio": 15.50,
-    "foto": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.santevet.es%2Farticulo%2Fgato-gordo&psig=AOvVaw00YuRxPA7GLTkxEoFdLk83&ust=1756401036082000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCOj-ifG9q48DFQAAAAAdAAAAABAK"
+    "foto": "https://images.ctfassets.net/denf86kkcx7r/1PKz6sDJvJXhONBEMzPQIY/48a700dc59e7f4fa64bff5ef5477ee2f/gato_gordo_santevet-83?fm=webp&w=913"
   },
   ...
 ]
