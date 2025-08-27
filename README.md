@@ -4,70 +4,34 @@ Esta API permite gestionar repuestos automotrices, con funcionalidades para crea
 Modelo de Datos: Repuesto
 Cada artículo de repuesto está representado por el siguiente modelo de datos.
 
-Campo
 
-Tipo de Dato
+*_id; string; ID único del repuesto, generado automáticamente por MongoDB.
 
-Descripción
+*nombre; string; Nombre del repuesto.
 
-_id
+*marca; string; Marca del repuesto.
 
-string
+*modelo; string; Modelo de vehículo para el que aplica el repuesto.
 
-ID único del repuesto, generado automáticamente por MongoDB.
+*año; number; Año del producto.
 
-nombre
+*precio; number; Precio del producto.
 
-string
-
-Nombre del repuesto.
-
-marca
-
-string
-
-Marca del repuesto.
-
-modelo
-
-string
-
-Modelo de vehículo para el que aplica el repuesto.
-
-año
-
-number
-
-Año del vehículo.
-
-precio
-
-number
-
-Precio del repuesto.
-
-foto
-
-string
-
-URL o ruta de la foto del repuesto.
+foto; string; URL o ruta de la foto del repuesto.
 
 Endpoints de la API
-Todos los endpoints tienen la base http://localhost:3000/repuesto.
+Todos los endpoints tiendran la url https://repuestos2-0.onrender.com.
 
 1. Crear un nuevo repuesto
 Método: POST
-
 Ruta: /repuesto
-
 Descripción: Crea y registra un nuevo repuesto en la base de datos.
-
 Cuerpo de la Petición:
 
 {
   "nombre": "Filtro de Aire",
-  "marca": "Bosch",
-  "modelo": "Spark",
+  "marca": "nike",
+  "modelo": "fium",
   "año": 2018,
   "precio": 15.50,
   "foto": "http://ejemplo.com/imagen.jpg"
@@ -77,11 +41,8 @@ Respuesta Exitosa (201 Created): Devuelve el objeto repuesto creado con su ID ú
 
 2. Leer todos los repuestos
 Método: GET
-
 Ruta: /repuesto
-
 Descripción: Obtiene una lista de todos los repuestos registrados en la base de datos.
-
 Respuesta Exitosa (200 OK): Devuelve un arreglo de objetos repuesto.
 
 [
@@ -99,9 +60,7 @@ Respuesta Exitosa (200 OK): Devuelve un arreglo de objetos repuesto.
 
 3. Leer un repuesto por su ID
 Método: GET
-
 Ruta: /repuesto/:id
-
 Descripción: Obtiene los detalles de un repuesto específico utilizando su ID.
 
 Parámetros de Ruta: id (string, el ID del repuesto)
@@ -112,11 +71,8 @@ Respuesta de Error (404 Not Found): Si el ID no existe, devuelve un error.
 
 4. Actualizar un repuesto por su ID
 Método: PUT
-
 Ruta: /repuesto/:id
-
 Descripción: Actualiza la información de un repuesto existente. Puedes enviar todos los campos o solo los que desees modificar.
-
 Parámetros de Ruta: id (string, el ID del repuesto)
 
 Cuerpo de la Petición:
@@ -132,9 +88,7 @@ Respuesta de Error (404 Not Found): Si el ID no existe, devuelve un error.
 
 5. Eliminar un repuesto por su ID
 Método: DELETE
-
 Ruta: /repuesto/:id
-
 Descripción: Elimina un repuesto de la base de datos.
 
 Parámetros de Ruta: id (string, el ID del repuesto)
